@@ -1,0 +1,321 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>vlfsoft</groupId>
+    <artifactId>with-index-prj</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <properties>
+
+        <!-- BEG: maven plugins -->
+
+        <!--https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin-->
+        <maven_compiler_pluginVersion>3.7.0</maven_compiler_pluginVersion>
+
+        <!--https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin-->
+        <maven_jar_pluginVersion>3.0.2</maven_jar_pluginVersion>
+
+        <!--https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin-->
+        <maven_dependency_pluginVersion>3.0.2</maven_dependency_pluginVersion>
+
+        <!--http://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- It optionally can be overriden in a project to define value of Main-Class: in MANIFEST.MF -->
+        <mainClassName>-</mainClassName>
+
+        <!-- END: maven plugins -->
+
+        <!-- BEG: kotlin plugins-->
+
+        <!--https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-maven-plugin-->
+        <kotlinVersion>1.1.51</kotlinVersion>
+
+        <!--https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-maven-plugin-->
+        <kotlin_maven_pluginVersion>${kotlinVersion}</kotlin_maven_pluginVersion>
+
+        <!--https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-maven-allopen-->
+        <kotlin_maven_allopen_pluginVersion>${kotlinVersion}</kotlin_maven_allopen_pluginVersion>
+
+        <!--https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-maven-noarg-->
+        <kotlin_maven_noarg_pluginVersion>${kotlinVersion}</kotlin_maven_noarg_pluginVersion>
+
+        <!-- END: kotlin plugins-->
+
+        <!-- BEG: kotlin libs -->
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib -->
+        <kotlin_stdlibVersion>${kotlinVersion}</kotlin_stdlibVersion>
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-stdlib-jre8 -->
+        <kotlin_stdlib_jre8Version>${kotlinVersion}</kotlin_stdlib_jre8Version>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-kotlin -->
+        <jackson-module-kotlinVersion>2.9.1</jackson-module-kotlinVersion>
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-junit -->
+        <kotlin_test_junitVersion>${kotlinVersion}</kotlin_test_junitVersion>
+
+        <!-- https://github.com/kotlintest/kotlintest KotlinTest is a flexible and comprehensive testing tool for Kotlin. -->
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test -->
+        <kotlin_testVersion>${kotlinVersion}</kotlin_testVersion>
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-reflect -->
+        <kotlin_reflectVersion>${kotlinVersion}</kotlin_reflectVersion>
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlinx -->
+        <!--<kotlinxVersion></kotlinxVersion>-->
+
+        <!--https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-core-->
+        <!--<kotlinx_coroutines_coreVersion>${kotlinxVersion}</kotlinx_coroutines_coreVersion>-->
+
+        <!--https://mvnrepository.com/artifact/org.jetbrains.kotlinx/kotlinx-coroutines-jdk8-->
+        <!--<kotlinx_coroutines_jdk8Version>${kotlinxVersion}</kotlinx_coroutines_jdk8Version>-->
+
+        <!-- END: kotlin libs -->
+
+        <!-- BEG: junit libs -->
+
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <junitVersion>4.12</junitVersion>
+
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+        <junit5Version>5.0.1</junit5Version>
+
+        <!-- END: junit libs -->
+
+        <!-- BEG: mockito libs -->
+
+        <!--https://mvnrepository.com/artifact/org.mockito/mockito-all-->
+        <mockitoVersion>1.10.19</mockitoVersion>
+
+        <!--https://mvnrepository.com/artifact/org.powermock-->
+        <powemockVersion>1.7.1</powemockVersion>
+
+        <!-- END: mockito libs -->
+
+        <!-- http://mvnrepository.com/artifact/com.google.code.findbugs/jsr305 -->
+        <findBugsJsr305Version>3.0.2</findBugsJsr305Version>
+
+    </properties>
+
+    <dependencies>
+
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+            <version>${findBugsJsr305Version}</version>
+        </dependency>
+
+        <!-- BEG: junit libs -->
+
+        <!--
+                <dependency>
+                    <groupId>junit</groupId>
+                    <artifactId>junit</artifactId>
+                    <version>${junitVersion}</version>
+                    <scope>test</scope>
+                </dependency>
+        -->
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit5Version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- END: junit libs -->
+
+        <!-- BEG: mockito libs -->
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockitoVersion}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- END: mockito libs -->
+
+        <!-- BEG: kotlin libs -->
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test-junit</artifactId>
+            <version>${kotlin_test_junitVersion}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- END: kotlin libs -->
+
+        <!-- BEG: kotlin libs -->
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jre8</artifactId>
+            <version>${kotlin_stdlib_jre8Version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-kotlin</artifactId>
+            <version>${jackson-module-kotlinVersion}</version>
+        </dependency>
+
+        <!-- BEG: kotlin libs -->
+
+    </dependencies>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven_jar_pluginVersion}</version>
+                <configuration>
+                    <archive>
+                        <addMavenDescriptor>false</addMavenDescriptor>
+                        <compress>true</compress>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>libs/</classpathPrefix>
+                            <mainClass>${mainClassName}</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${maven_dependency_pluginVersion}</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/libs</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--https://kotlinlang.org/docs/reference/using-maven.html#compiling-kotlin-and-java-sources-->
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin_maven_pluginVersion}</version>
+
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <!--<sourceDir>${project.basedir}/src/main/kotlin</sourceDir>-->
+                                <!--<sourceDir>${project.basedir}/src/main/java</sourceDir>-->
+                                <source>src/main/java</source>
+                                <source>src/main/kotlin</source>
+                            </sourceDirs>
+
+                            <!--https://kotlinlang.org/docs/reference/using-maven.html#attributes-specific-for-jvm-->
+                            <jvmTarget>${maven.compiler.target}</jvmTarget>
+
+                        </configuration>
+                    </execution>
+
+                    <execution>
+                        <id>test-compile</id>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                        <configuration>
+                            <sourceDirs>
+                                <!--<sourceDir>${project.basedir}/src/test/kotlin</sourceDir>-->
+                                <!--<sourceDir>${project.basedir}/src/test/java</sourceDir>-->
+                                <source>src/test/java</source>
+                                <source>src/test/kotlin</source>
+                            </sourceDirs>
+
+                            <!--https://kotlinlang.org/docs/reference/using-maven.html#attributes-specific-for-jvm-->
+                            <jvmTarget>${maven.compiler.target}</jvmTarget>
+
+                            <compilerPlugins>
+                                <!--configures automatically kotlin-maven-allopen -->
+                                <plugin>spring</plugin>
+                                <!--configures automatically kotlin-maven-noarg -->
+                                <plugin>jpa</plugin>
+                            </compilerPlugins>
+
+
+                        </configuration>
+                    </execution>
+                </executions>
+
+                <dependencies>
+
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin_maven_allopen_pluginVersion}</version>
+                    </dependency>
+
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>${kotlin_maven_noarg_pluginVersion}</version>
+                    </dependency>
+
+                </dependencies>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven_compiler_pluginVersion}</version>
+                <executions>
+                    <!-- Replacing default-compile as it is treated specially by maven -->
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <!-- Replacing default-testCompile as it is treated specially by maven -->
+                    <execution>
+                        <id>default-testCompile</id>
+                        <phase>none</phase>
+                    </execution>
+                    <!--<execution>-->
+                    <!--<id>java-compile</id>-->
+                    <!--<phase>compile</phase>-->
+                    <!--<goals>-->
+                    <!--<goal>compile</goal>-->
+                    <!--</goals>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                    <!--<id>java-test-compile</id>-->
+                    <!--<phase>test-compile</phase>-->
+                    <!--<goals>-->
+                    <!--<goal>testCompile</goal>-->
+                    <!--</goals>-->
+                    <!--</execution>-->
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
